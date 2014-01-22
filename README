@@ -3,6 +3,6 @@ displays pop-up notifications on your desktop when new buses arrive.
 
 == Build Dependence ==
 
+* Inno Setup - http://www.jrsoftware.org/isinfo.php
 * wxpython - http://wxpython.org/
 * py2exe - http://www.py2exe.org/
-* feedparser - https://code.google.com/p/feedparser/
