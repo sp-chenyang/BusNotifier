@@ -36,7 +36,9 @@ def main():
     container, message = ipc.init()
     if not container:
         return
-    app = wx.PySimpleApp()#redirect=True, filename='log.txt')
+    # PySimpleApp has been deprecated in wxPython 2.9. wx.App(False) does basically the same thing.
+    #app = wx.PySimpleApp()#redirect=True, filename='log.txt')
+    app = wx.App(False)#redirect=True, filename='log.txt')
     wx.Log_SetActiveTarget(wx.LogStderr())
     ctrl = controller.Controller()
     container.callback = ctrl.parse_args

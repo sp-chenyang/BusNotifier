@@ -207,14 +207,16 @@ def p_empty(t):
 def p_error(t):
     raise Exception
     
-import ply.lex as lex
-import ply.yacc as yacc
+# not using ply in live bus.
+#import ply.lex as lex
+#import ply.yacc as yacc
 
-lexer = lex.lex()
-parser = yacc.yacc()
+#lexer = lex.lex()
+#parser = yacc.yacc()
 
 def parse(text):
-    return parser.parse(text, lexer=lexer)
+    #return parser.parse(text, lexer=lexer)
+    return False
     
 if __name__ == '__main__':
     while True:

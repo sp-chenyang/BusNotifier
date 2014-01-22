@@ -7,7 +7,8 @@ import calendar
 import urllib2
 import urlparse
 import threading
-import feedparser
+# not using in live bus
+#import feedparser
 from htmlentitydefs import name2codepoint
 from settings import settings
 
@@ -81,7 +82,9 @@ def parse(url, username=None, password=None, etag=None, modified=None):
     handlers = [get_proxy()]
     if username and password:
         url = insert_credentials(url, username, password)
-    return feedparser.parse(url, etag=etag, modified=modified, agent=agent, handlers=handlers)
+    # not using in live bus.
+    #return feedparser.parse(url, etag=etag, modified=modified, agent=agent, handlers=handlers)
+    return False
     
 def is_valid_feed(data):
     entries = get(data, 'entries', [])

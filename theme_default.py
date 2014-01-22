@@ -230,7 +230,9 @@ class Frame(wx.Frame):
         return panel
         
 if __name__ == '__main__':
-    app = wx.PySimpleApp()
+    # PySimpleApp has been deprecated in wxPython 2.9. wx.App(False) does basically the same thing.
+    #app = wx.PySimpleApp()
+    app = wx.App(False)
     frame = Frame()
     frame.Show()
     app.MainLoop()
