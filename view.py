@@ -1215,7 +1215,11 @@ class PopupsPanel(wx.Panel):
         self.body.SetValue(model.POPUP_BODY_LENGTH)
         util.select_choice(self.position, model.POPUP_POSITION)
         util.select_choice(self.display, model.POPUP_DISPLAY)
-        self.border_color.SetBackgroundColour(wx.Color(*settings.POPUP_BORDER_COLOR))
+        # api changed after wx 2.9
+        if wx.VERSION >= (2,9):
+            self.border_color.SetBackgroundColour(wx.Colour(*settings.POPUP_BORDER_COLOR))
+        else:
+            self.border_color.SetBackgroundColour(wx.Color(*settings.POPUP_BORDER_COLOR))
         self.border_size.SetValue(model.POPUP_BORDER_SIZE)
     def update_model(self):
         model = self.model
